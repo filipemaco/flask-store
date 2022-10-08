@@ -3,8 +3,8 @@ from flask_smorest import Blueprint, abort
 from sqlalchemy.exc import SQLAlchemyError
 
 from db import db
-from models import TagModel, StoreModel, ItemModel
-from schemas import TagSchema, TagAndItemSchema
+from models import ItemModel, StoreModel, TagModel
+from schemas import TagAndItemSchema, TagSchema
 
 blp = Blueprint("Tags", "tags", description="Operations on tags")
 
@@ -45,7 +45,10 @@ class LinkTagsToItem(MethodView):
         tag = TagModel.query.get_or_404(tag_id)
 
         if item.store.id != tag.store.id:
-            abort(400, message="Make sure item and tag belong to the same store before linking.")
+            abort(
+                400,
+                message="Make sure item and tag belong to the same store before linking.",
+            )
 
         item.tags.append(tag)
 

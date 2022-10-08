@@ -1,9 +1,9 @@
-from typing import Tuple, Dict, List
+from typing import Dict, List, Tuple
 
 from flask.views import MethodView
-from flask_smorest import Blueprint, abort
 from flask_jwt_extended import jwt_required
-from sqlalchemy.exc import SQLAlchemyError, IntegrityError
+from flask_smorest import Blueprint, abort
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
 from db import db
 from models import StoreModel
@@ -48,4 +48,3 @@ class StoreList(MethodView):
         except SQLAlchemyError:
             abort(500, message="An error occurred while creating the store")
         return store, 201
-

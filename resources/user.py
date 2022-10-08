@@ -1,12 +1,13 @@
 from flask.views import MethodView
+from flask_jwt_extended import (create_access_token, create_refresh_token,
+                                get_jwt, get_jwt_identity, jwt_required)
 from flask_smorest import Blueprint, abort
 from passlib.hash import pbkdf2_sha256
-from flask_jwt_extended import create_access_token, create_refresh_token, get_jwt_identity, get_jwt, jwt_required
 
+from blocklist import BLOCKLIST
 from db import db
 from models import UserModel
 from schemas import UserSchema
-from blocklist import BLOCKLIST
 
 blp = Blueprint("Users", "users", description="Operations on users")
 
