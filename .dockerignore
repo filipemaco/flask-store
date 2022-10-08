@@ -1,0 +1,12 @@
+.DS_Store
+.vscode
+.idea
+*.iml
+___.py
+venv
+.venv
+.env
+.pem
+.coverage
+.mypy_cache
+__pycache__
