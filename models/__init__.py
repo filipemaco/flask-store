@@ -1,5 +1,5 @@
-from models.item import ItemModel
-from models.item_tags import ItemTags
-from models.store import StoreModel
-from models.tag import TagModel
-from models.user import UserModel
+from models.item import ItemModel  # noqa: F401
+from models.item_tags import ItemTags  # noqa: F401
+from models.store import StoreModel  # noqa: F401
+from models.tag import TagModel  # noqa: F401
+from models.user import UserModel  # noqa: F401

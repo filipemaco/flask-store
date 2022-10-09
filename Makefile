@@ -4,10 +4,8 @@ format:
 
 
 lint:
-	black --check ./plasma/ ./tests/ ./scripts/
-	isort --check ./plasma/ ./tests/ ./scripts/
-	flake8 ./models/ ./resources/ app.py
+	black --check .
+	flake8 .
 
 build:
 	pip install -r requirements.txt
-	pre-commit install

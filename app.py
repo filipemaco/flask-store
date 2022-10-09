@@ -8,10 +8,10 @@ from flask_smorest import Api
 
 from blocklist import BLOCKLIST
 from db import db
-from resources.item import blp as ItemBlueprint
-from resources.store import blp as StoreBlueprint
-from resources.tag import blp as TagBlueprint
-from resources.user import blp as UserBlueprint
+from views.item import blp as ItemBlueprint
+from views.store import blp as StoreBlueprint
+from views.tag import blp as TagBlueprint
+from views.user import blp as UserBlueprint
 
 
 def create_app():
@@ -32,7 +32,7 @@ def create_app():
     )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
-    migrate = Migrate(app, db)
+    Migrate(app, db)
 
     jwt = JWTManager(app)
 

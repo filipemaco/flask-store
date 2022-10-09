@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple
+from typing import Dict, Tuple
 
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required
