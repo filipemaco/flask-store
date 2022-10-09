@@ -1,3 +1,4 @@
 [flake8]
+ignore = E203, E741, W503
 max-line-length = 120
-
+extend-exclude = migrations/,instance/,venv/
